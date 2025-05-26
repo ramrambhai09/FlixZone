@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio - ConsalPro</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 1.5rem 5%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #333;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #f7c41f;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: #ddd;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+      font-size: 1.1rem;
+    }
+
+    nav a:hover {
+      color: #f7c41f;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .header-right button {
+      background: #f7c41f;
+      color: #111;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .header-right button:hover {
+      background: #ffd700;
+      transform: translateY(-2px);
+    }
+
+    .header-right input {
+      padding: 0.7rem 1rem;
+      border-radius: 5px;
+      border: none;
+      background: #222;
+      color: white;
+      width: 180px;
+      transition: all 0.3s;
+    }
+
+    .header-right input:focus {
+      outline: 2px solid #f7c41f;
+      width: 220px;
+    }
+
+    .hero {
+      position: relative;
+      text-align: center;
+      height: 60vh;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.4;
+    }
+
+    .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      width: 100%;
+    }
+
+    .overlay-text p {
+      font-size: 1.2rem;
+      color: #ccc;
+      margin-bottom: 1rem;
+    }
+
+    .overlay-text h1 {
+      font-size: 4rem;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 3rem 5%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #222;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(247, 196, 31, 0.2);
+    }
+
+    .card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .card:hover img {
+      transform: scale(1.05);
+    }
+
+    .card h3 {
+      padding: 1.5rem;
+      font-size: 1.2rem;
+      color: #f7c41f;
+      text-align: center;
+    }
+
+    footer {
+      background: #000;
+      padding: 4rem 5%;
+      text-align: center;
+    }
+
+    footer h2 {
+      color: #f7c41f;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    footer p {
+      margin: 1rem 0;
+      color: #aaa;
+      font-size: 1.1rem;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .social-icons a {
+      color: #f7c41f;
+      font-size: 1.5rem;
+      transition: transform 0.3s;
+    }
+
+    .social-icons a:hover {
+      transform: translateY(-5px);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+      }
+      
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .header-right {
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .overlay-text h1 {
+        font-size: 2.5rem;
+      }
+      
+      main {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Flix<span>Zone</span></div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <!-- <a href="#">Pages</a>
+      <a href="#">Services</a>
+      <a href="#">Projects</a>
+      <a href="#">Blogs</a> -->
+    </nav>
+    <div class="header-right">
+      <button>Get In Touch</button>
+      <input type="search" id="searchInput" placeholder="Search..."/>
+    </div>
+  </header>
+
+  <section class="hero">
+    <img src="img/myke-simon-atsUqIm3wxo-unsplash.jpg" alt="Hero"/>
+    <div class="overlay-text">
+      <h1>Latest Movies & Web Series</h1>
+    </div>
+  </section>
+
+  <main id="portfolioContainer">
+
+
+    <div class="card" data-name="VR Boy">
+        <a href="https://youtu.be/To0CO2QTPQk?si=EKx52ziHVw4eaVeC">
+          <img src="img/01.png" alt="VR Boy"/>
+          <h3> Planning your first time (code :- 01)</h3>
+        </a>
+    </div>
+      
+    
+
+    
+  </main>
+
+  <footer>
+    <h2>Follow & Connect</h2>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p>🌐 My Websites: comimg soon</p>
+    <p>📺 YouTube Channels: comimg soon</p>
+    <p>📷 Instagram: @radhey_krushnam01</p>
+    <p>&copy; 2023 ConsalPro. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Enhanced search functionality
+    const searchInput = document.getElementById("searchInput");
+    const portfolioItems = document.querySelectorAll(".card");
+
+    searchInput.addEventListener("input", () => {
+      const filter = searchInput.value.toLowerCase().trim();
+      portfolioItems.forEach(card => {
+        const name = card.getAttribute("data-name").toLowerCase();
+        const title = card.querySelector("h3").textContent.toLowerCase();
+        const matches = name.includes(filter) || title.includes(filter);
+        card.style.display = matches ? "block" : "none";
+      });
+    });
+
+    // Smooth hover effects
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.style.transition = 'all 0.3s ease-out';
+      });
+    });
+  </script>
+</body>
+</html>
