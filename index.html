@@ -3,20 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krushnam Organic Farm | Premium Organic Products</title>
+    <title>Krushnam Organic Farm</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --cream: #f9f7f2;
-            --dark-cream: #f2efe6;
             --sage: #8a9b6e;
             --forest: #556b2f;
-            --dark-forest: #3a4a21;
             --gold: #c8a97e;
             --charcoal: #2c2c2c;
-            --light-text: #5a5a5a;
-            --transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         * {
@@ -25,120 +20,27 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: var(--charcoal);
             background-color: var(--cream);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4, h5 {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 600;
-            line-height: 1.2;
-        }
-
-        h1 {
-            font-size: 4rem;
-            letter-spacing: -0.5px;
-        }
-
-        h2 {
-            font-size: 3.2rem;
-            margin-bottom: 2rem;
-        }
-
-        h3 {
-            font-size: 2.2rem;
-        }
-
-        p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            color: var(--light-text);
+            line-height: 1.6;
         }
 
         .container {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        section {
-            padding: 100px 0;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 16px 32px;
-            background-color: var(--forest);
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
             width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: 0.5s;
-        }
-
-        .btn:hover:before {
-            left: 100%;
-        }
-
-        .btn:hover {
-            background-color: var(--dark-forest);
-            transform: translateY(-2px);
-        }
-
-        .btn i {
-            margin-left: 8px;
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 1px solid var(--forest);
-            color: var(--forest);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--forest);
-            color: white;
+            padding: 0 15px;
         }
 
         /* Header */
         header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 25px 0;
-            transition: var(--transition);
-        }
-
-        header.scrolled {
-            background-color: rgba(249, 247, 242, 0.95);
+            background: white;
             padding: 15px 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
 
         .nav-container {
@@ -147,695 +49,514 @@
             align-items: center;
         }
 
-        .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            font-weight: 600;
-            color: var(--forest);
-            text-decoration: none;
+        .logo-container {
             display: flex;
             align-items: center;
         }
 
-        .logo span {
-            color: var(--gold);
-        }
-
-        .nav-links {
+        .logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--sage);
             display: flex;
-            list-style: none;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 10px;
         }
 
-        .nav-links li {
-            margin-left: 40px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--charcoal);
-            font-weight: 500;
-            font-size: 1rem;
-            position: relative;
-            padding: 5px 0;
-        }
-
-        .nav-links a:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--forest);
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover {
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 600;
             color: var(--forest);
         }
 
-        .nav-links a:hover:after {
-            width: 100%;
-        }
-
         .menu-toggle {
-            display: none;
             font-size: 1.5rem;
-            cursor: pointer;
             color: var(--forest);
         }
 
         /* Hero Section */
         .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(rgba(249, 247, 242, 0.7), rgba(249, 247, 242, 0.8)), 
-                        url('https://images.unsplash.com/photo-1574943320219-553eb213f72d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            margin-top: 70px;
+            padding: 30px 0;
+            text-align: center;
+            background: linear-gradient(rgba(249,247,242,0.8), rgba(249,247,242,0.9)), 
+                        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
             background-size: cover;
             background-position: center;
-            z-index: -1;
-        }
-
-        .hero-content {
-            max-width: 700px;
-        }
-
-        .hero-subtitle {
-            font-size: 1.3rem;
-            color: var(--forest);
-            margin-bottom: 1rem;
-            display: block;
-            font-weight: 500;
-            letter-spacing: 2px;
         }
 
         .hero-title {
-            font-size: 4.5rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
+            font-size: 2rem;
+            color: var(--forest);
+            margin-bottom: 15px;
         }
 
-        .hero-description {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
-            color: var(--light-text);
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            margin-bottom: 25px;
         }
 
-        .hero-btns {
-            display: flex;
-            gap: 20px;
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: var(--forest);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
         }
 
         /* Products Section */
         .products {
-            background-color: var(--dark-cream);
-            position: relative;
+            padding: 40px 0;
         }
 
-        .section-header {
+        .section-title {
             text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-subtitle {
-            font-size: 1.1rem;
+            margin-bottom: 25px;
             color: var(--forest);
-            margin-bottom: 1rem;
-            display: block;
-            letter-spacing: 2px;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 40px;
         }
 
         .product-card {
-            background-color: white;
-            border-radius: 5px;
+            background: white;
+            border-radius: 10px;
             overflow: hidden;
-            transition: var(--transition);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            position: relative;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
 
         .product-image {
-            height: 240px;
-            width: 100%;
+            height: 180px;
             background-color: var(--cream);
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .product-image:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.03));
-        }
-
-        .product-image i {
-            font-size: 4rem;
             color: var(--sage);
-        }
-
-        .product-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        .available {
-            background-color: var(--sage);
-            color: white;
-        }
-
-        .out-of-stock {
-            background-color: #e8e8e8;
-            color: var(--light-text);
+            font-size: 2.5rem;
         }
 
         .product-info {
-            padding: 25px;
+            padding: 15px;
         }
 
         .product-title {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .product-description {
-            color: var(--light-text);
-            margin-bottom: 15px;
-            font-size: 1rem;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
         }
 
         .product-price {
-            font-weight: 600;
-            font-size: 1.3rem;
+            font-weight: bold;
             color: var(--forest);
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+        }
+
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .availability {
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .available {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .out-of-stock {
+            background: #ffebee;
+            color: #c62828;
         }
 
         /* About Section */
         .about {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
+            padding: 40px 0;
+            background: white;
+        }
+
+        .about-content {
+            text-align: center;
         }
 
         .about-image {
-            position: relative;
-        }
-
-        .about-image:before {
-            content: '';
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            width: 100%;
-            height: 100%;
-            border: 1px solid var(--gold);
-            z-index: -1;
-        }
-
-        .about-image img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .about-content h2 {
-            margin-bottom: 1.5rem;
-        }
-
-        .about-features {
-            margin-top: 2rem;
-        }
-
-        .feature {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 1.5rem;
-        }
-
-        .feature-icon {
-            width: 50px;
-            height: 50px;
+            height: 200px;
             background-color: var(--cream);
-            border-radius: 50%;
+            border-radius: 10px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 20px;
-            color: var(--forest);
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-
-        .feature-text h4 {
-            margin-bottom: 5px;
-            font-size: 1.2rem;
+            color: var(--sage);
+            font-size: 2rem;
         }
 
         /* Contact Section */
         .contact {
-            background-color: var(--dark-cream);
-        }
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
+            padding: 40px 0;
         }
 
         .contact-form {
-            background-color: white;
-            padding: 50px;
-            border-radius: 5px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
 
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 15px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 5px;
             font-weight: 500;
-            color: var(--charcoal);
         }
 
-        .form-group input,
+        .form-group input, 
         .form-group textarea {
             width: 100%;
-            padding: 15px;
-            border: 1px solid #e0e0e0;
-            border-radius: 3px;
-            font-size: 1rem;
-            font-family: 'Inter', sans-serif;
-            transition: var(--transition);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--forest);
-        }
-
-        .form-group textarea {
-            height: 150px;
-            resize: vertical;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .contact-info h3 {
-            margin-bottom: 2rem;
-            font-size: 2rem;
-        }
-
-        .contact-details {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-
-        .contact-details li {
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-        }
-
-        .contact-details i {
-            margin-right: 15px;
-            color: var(--forest);
-            font-size: 1.2rem;
-            width: 30px;
+        /* Footer */
+        footer {
+            background: var(--forest);
+            color: white;
+            padding: 30px 0 15px;
+            text-align: center;
         }
 
         .social-links {
             display: flex;
-            gap: 15px;
+            justify-content: center;
+            margin-bottom: 20px;
         }
 
         .social-links a {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 45px;
-            height: 45px;
-            background-color: white;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
             border-radius: 50%;
-            color: var(--forest);
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: var(--transition);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .social-links a:hover {
-            background-color: var(--forest);
+            margin: 0 10px;
             color: white;
-            transform: translateY(-3px);
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--charcoal);
-            color: white;
-            padding: 80px 0 30px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 50px;
-            margin-bottom: 50px;
-        }
-
-        .footer-column h4 {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            color: var(--gold);
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: var(--gold);
-        }
-
-        .footer-about p {
-            color: rgba(255, 255, 255, 0.7);
         }
 
         .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.5);
+            opacity: 0.8;
         }
 
-        /* Animations */
-        .fade-in {
+        /* Admin Panel Styles */
+        .admin-panel {
+            display: none;
+            margin-top: 70px;
+            padding: 20px 0;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .admin-form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -10px;
+        }
+
+        .form-col {
+            flex: 1;
+            min-width: 200px;
+            padding: 0 10px;
+            margin-bottom: 15px;
+        }
+
+        .toggle-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 50px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .toggle-switch input {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            width: 0;
+            height: 0;
         }
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 24px;
         }
 
-        /* Responsive */
-        @media (max-width: 1100px) {
-            h1 {
-                font-size: 3.5rem;
-            }
-            
-            h2 {
-                font-size: 2.8rem;
-            }
-            
-            .about,
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: 50px;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr 1fr;
-            }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
         }
 
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background-color: var(--cream);
-                flex-direction: column;
-                align-items: center;
-                padding: 30px 0;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-                transform: translateY(-150%);
-                transition: var(--transition);
-            }
-
-            .nav-links.active {
-                transform: translateY(0);
-            }
-
-            .nav-links li {
-                margin: 15px 0;
-            }
-            
-            .hero-title {
-                font-size: 3.2rem;
-            }
-            
-            .hero-btns {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .btn {
-                width: 100%;
-                max-width: 250px;
-                margin-bottom: 15px;
-                justify-content: center;
-            }
-            
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
+        input:checked + .slider {
+            background-color: var(--forest);
         }
 
-        @media (max-width: 576px) {
-            h1 {
-                font-size: 2.8rem;
-            }
-            
-            h2 {
-                font-size: 2.2rem;
-            }
-            
-            section {
-                padding: 70px 0;
-            }
-            
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .hero-description {
-                font-size: 1.1rem;
-            }
-            
-            .contact-form {
-                padding: 30px;
-            }
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        .product-list {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .product-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .product-item:last-child {
+            border-bottom: none;
+        }
+
+        .product-item-image {
+            width: 60px;
+            height: 60px;
+            background: var(--cream);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--sage);
+        }
+
+        .product-item-details {
+            flex: 1;
+        }
+
+        .product-item-title {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .product-item-price {
+            color: var(--forest);
+            font-weight: 500;
+        }
+
+        .product-item-actions {
+            display: flex;
+        }
+
+        .btn-edit, .btn-delete {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        .btn-edit {
+            background: #ff9800;
+            color: white;
+        }
+
+        .btn-delete {
+            background: #f44336;
+            color: white;
+        }
+
+        /* Navigation */
+        .nav-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+
+        .nav-menu.active {
+            display: block;
+        }
+
+        .nav-links {
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-bottom: 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 500;
+            display: block;
+            padding: 10px 0;
+        }
+
+        .admin-link {
+            color: var(--forest);
+            font-weight: 600;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header id="header">
-        <div class="container nav-container">
-            <a href="#" class="logo">Krushnam<span>.</span></a>
-            <div class="menu-toggle" id="menuToggle">
-                <i class="fas fa-bars"></i>
-            </div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#" class="btn btn-outline">Order Now</a></li>
-            </ul>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-bg"></div>
-        <div class="container">
-            <div class="hero-content fade-in">
-                <span class="hero-subtitle">WELCOME TO KRUSHNAM ORGANIC FARM</span>
-                <h1 class="hero-title">પ્રકૃતિની સુગંધ, શુદ્ધતાનું વચન.</h1>
-                <p class="hero-description">Pure, Natural & Honest Taste from the Heart of Somnath. Experience the authentic flavors of Gujarat's finest organic produce, cultivated with care and tradition.</p>
-                <div class="hero-btns">
-                    <a href="#products" class="btn">Explore Products <i class="fas fa-arrow-right"></i></a>
-                    <a href="#about" class="btn btn-outline">Our Story</a>
+    <!-- Main Website -->
+    <div id="main-website">
+        <!-- Header -->
+        <header>
+            <div class="container nav-container">
+                <div class="logo-container">
+                    <div class="logo">K</div>
+                    <div class="logo-text">Krushnam Organic</div>
+                </div>
+                <div class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
                 </div>
             </div>
-        </div>
-    </section>
+        </header>
 
-    <!-- Products Section -->
-    <section class="products" id="products">
-        <div class="container">
-            <div class="section-header fade-in">
-                <span class="section-subtitle">OUR PRODUCTS</span>
-                <h2>Farm Fresh & Organic</h2>
+        <!-- Navigation Menu -->
+        <div class="nav-menu" id="navMenu">
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" id="adminLink" class="admin-link">Admin Panel</a></li>
+                </ul>
             </div>
-            <div class="products-grid">
-                <!-- Product 1 -->
-                <div class="product-card fade-in">
+        </div>
+
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <h1 class="hero-title">પ્રકૃતિની સુગંધ, શુદ્ધતાનું વચન.</h1>
+                <p class="hero-subtitle">Pure, Natural & Honest Taste from the Heart of Somnath</p>
+                <a href="#products" class="btn">Explore Products</a>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section class="products" id="products">
+            <div class="container">
+                <h2 class="section-title">Our Products</h2>
+                
+                <div class="product-card">
                     <div class="product-image">
                         <i class="fas fa-wheat-alt"></i>
-                        <span class="product-badge available">Available</span>
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Organic Wheat Flour</h3>
-                        <p class="product-description">Freshly milled organic wheat flour, rich in nutrients and fiber. Perfect for traditional Indian breads.</p>
+                        <p class="product-description">Freshly milled organic wheat flour, rich in nutrients.</p>
                         <p class="product-price">₹120 / kg</p>
-                        <a href="https://wa.me/919428560574?text=Hello%20Krushnam%20Organic%20Farm,%20I%20want%20to%20order%20Organic%20Wheat%20Flour." class="btn" target="_blank">Order Now <i class="fab fa-whatsapp"></i></a>
+                        <div class="product-actions">
+                            <span class="availability available">Available</span>
+                            <a href="https://wa.me/919428560574?text=Hello%20Krushnam%20Organic%20Farm,%20I%20want%20to%20order%20Organic%20Wheat%20Flour." class="btn" target="_blank">Order</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Product 2 -->
-                <div class="product-card fade-in">
+                <div class="product-card">
                     <div class="product-image">
                         <i class="fas fa-honey-pot"></i>
-                        <span class="product-badge available">Available</span>
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Pure Honey</h3>
-                        <p class="product-description">100% pure, raw honey collected from our organic farm. Unprocessed and full of natural goodness.</p>
+                        <p class="product-description">100% pure, raw honey from our organic farm.</p>
                         <p class="product-price">₹350 / 500g</p>
-                        <a href="https://wa.me/919428560574?text=Hello%20Krushnam%20Organic%20Farm,%20I%20want%20to%20order%20Pure%20Honey." class="btn" target="_blank">Order Now <i class="fab fa-whatsapp"></i></a>
+                        <div class="product-actions">
+                            <span class="availability available">Available</span>
+                            <a href="https://wa.me/919428560574?text=Hello%20Krushnam%20Organic%20Farm,%20I%20want%20to%20order%20Pure%20Honey." class="btn" target="_blank">Order</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Product 3 -->
-                <div class="product-card fade-in">
+                <div class="product-card">
                     <div class="product-image">
                         <i class="fas fa-mortar-pestle"></i>
-                        <span class="product-badge out-of-stock">Out of Stock</span>
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Organic Ghee</h3>
-                        <p class="product-description">Traditional clarified butter made from organic cow milk. Rich in aroma and authentic taste.</p>
+                        <p class="product-description">Traditional clarified butter from organic cow milk.</p>
                         <p class="product-price">₹550 / kg</p>
-                        <button class="btn" disabled>Out of Stock</button>
+                        <div class="product-actions">
+                            <span class="availability out-of-stock">Out of Stock</span>
+                            <button class="btn" disabled>Order</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section class="about-section" id="about">
-        <div class="container">
-            <div class="about">
-                <div class="about-image fade-in">
-                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Krushnam Organic Farm">
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <h2 class="section-title">About Us</h2>
+                <div class="about-image">
+                    <i class="fas fa-tractor"></i>
                 </div>
-                <div class="about-content fade-in">
-                    <span class="section-subtitle">OUR STORY</span>
-                    <h2>From Our Fields to Your Home</h2>
+                <div class="about-content">
                     <p>Krushnam Organic Farm, located in Ukadiya village of Veraval Taluka, Somnath, is committed to delivering pure and natural products straight from nature's heart.</p>
-                    <p>For generations, our family has cultivated the rich soil of Gujarat, following traditional farming methods that respect the earth and its natural cycles.</p>
-                    
-                    <div class="about-features">
-                        <div class="feature">
-                            <div class="feature-icon">
-                                <i class="fas fa-seedling"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h4>100% Organic</h4>
-                                <p>No chemicals, pesticides, or artificial fertilizers used in our farming process.</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <div class="feature-icon">
-                                <i class="fas fa-tractor"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Sustainable Farming</h4>
-                                <p>We practice crop rotation and natural pest control to maintain soil health.</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <div class="feature-icon">
-                                <i class="fas fa-award"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Quality Guarantee</h4>
-                                <p>Every product is carefully selected and tested for quality and freshness.</p>
-                            </div>
-                        </div>
-                    </div>
+                    <p>Our farm follows sustainable agricultural practices that respect the environment and promote biodiversity.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="contact-container">
-                <div class="contact-form fade-in">
-                    <h3>Get In Touch</h3>
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2 class="section-title">Contact Us</h2>
+                <div class="contact-form">
                     <form id="contactForm">
                         <div class="form-group">
                             <label for="name">Your Name</label>
@@ -849,106 +570,95 @@
                             <label for="message">Your Message</label>
                             <textarea id="message" required></textarea>
                         </div>
-                        <button type="submit" class="btn">Send Message <i class="fas fa-paper-plane"></i></button>
+                        <button type="submit" class="btn">Send Message</button>
                     </form>
                 </div>
-                <div class="contact-info fade-in">
-                    <h3>Contact Information</h3>
-                    <ul class="contact-details">
-                        <li><i class="fas fa-map-marker-alt"></i> Ukadiya Village, Veraval Taluka, Somnath District, Gujarat</li>
-                        <li><i class="fas fa-phone"></i> +91 94285 60574</li>
-                        <li><i class="fas fa-envelope"></i> info@krushnamorganicfarm.com</li>
-                    </ul>
-                    
-                    <h3>Follow Us</h3>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column footer-about">
-                    <h4>Krushnam Organic Farm</h4>
-                    <p>Pure, natural and honest products from the heart of Somnath, Gujarat. We are committed to sustainable farming and delivering the finest organic produce to your doorstep.</p>
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                    <a href="#"><i class="fas fa-phone"></i></a>
                 </div>
-                <div class="footer-column">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Products</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Organic Grains</a></li>
-                        <li><a href="#">Pure Honey</a></li>
-                        <li><a href="#">Cold-Pressed Oils</a></li>
-                        <li><a href="#">Organic Spices</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Contact Info</h4>
-                    <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> Ukadiya Village, Gujarat</li>
-                        <li><i class="fas fa-phone"></i> +91 94285 60574</li>
-                        <li><i class="fas fa-envelope"></i> info@krushnamorganic.com</li>
-                    </ul>
-                </div>
+                <p class="copyright">© 2023 Krushnam Organic Farm. All rights reserved.</p>
             </div>
-            <div class="copyright">
-                <p>&copy; 2023 Krushnam Organic Farm. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="admin-panel" class="admin-panel">
+        <div class="container">
+            <div class="admin-header">
+                <h2>Admin Panel</h2>
+                <a href="#" id="backToWebsite" class="btn">Back to Website</a>
+            </div>
+
+            <div class="admin-form">
+                <h3>Add/Edit Product</h3>
+                <form id="productForm">
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label for="title">Product Title</label>
+                            <input type="text" id="title" required>
+                        </div>
+                        <div class="form-col">
+                            <label for="price">Price (₹)</label>
+                            <input type="number" id="price" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label for="description">Description</label>
+                            <textarea id="description" required></textarea>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label>Product Image</label>
+                            <input type="file" id="image" accept="image/*">
+                        </div>
+                        <div class="form-col">
+                            <div class="toggle-container">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="availability">
+                                    <span class="slider"></span>
+                                </label>
+                                <span>Available</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn" id="submitBtn">Add Product</button>
+                </form>
+            </div>
+
+            <div class="product-list">
+                <h3>Product List</h3>
+                <div id="adminProductList">
+                    <!-- Product items will be added here dynamically -->
+                </div>
             </div>
         </div>
-    </footer>
+    </div>
 
     <script>
-        // Mobile Menu Toggle
+        // Mobile menu toggle
         const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Fade in animation on scroll
-        const fadeElements = document.querySelectorAll('.fade-in');
+        const navMenu = document.getElementById('navMenu');
         
-        const fadeInOnScroll = () => {
-            fadeElements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < window.innerHeight - elementVisible) {
-                    element.classList.add('visible');
-                }
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
             });
-        };
-        
-        window.addEventListener('scroll', fadeInOnScroll);
-        // Initial check
-        fadeInOnScroll();
+        });
 
         // Contact form submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
@@ -957,12 +667,145 @@
             this.reset();
         });
 
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
+        // Admin Panel Functionality
+        const adminLink = document.getElementById('adminLink');
+        const backToWebsite = document.getElementById('backToWebsite');
+        const mainWebsite = document.getElementById('main-website');
+        const adminPanel = document.getElementById('admin-panel');
+
+        // Switch to admin panel
+        adminLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            mainWebsite.style.display = 'none';
+            adminPanel.style.display = 'block';
+            loadAdminProducts();
         });
+
+        // Switch back to main website
+        backToWebsite.addEventListener('click', function(e) {
+            e.preventDefault();
+            adminPanel.style.display = 'none';
+            mainWebsite.style.display = 'block';
+        });
+
+        // Sample product data
+        let products = [
+            {
+                id: 1,
+                title: "Organic Wheat Flour",
+                description: "Freshly milled organic wheat flour, rich in nutrients and fiber.",
+                price: "120",
+                available: true,
+                image: "wheat-flour.jpg"
+            },
+            {
+                id: 2,
+                title: "Pure Honey",
+                description: "100% pure, raw honey collected from our organic farm.",
+                price: "350",
+                available: true,
+                image: "honey.jpg"
+            },
+            {
+                id: 3,
+                title: "Organic Ghee",
+                description: "Traditional clarified butter made from organic cow milk.",
+                price: "550",
+                available: false,
+                image: "ghee.jpg"
+            }
+        ];
+
+        let editingProductId = null;
+
+        // Load products in admin panel
+        function loadAdminProducts() {
+            const adminProductList = document.getElementById('adminProductList');
+            adminProductList.innerHTML = '';
+            
+            products.forEach(product => {
+                const productItem = document.createElement('div');
+                productItem.className = 'product-item';
+                
+                productItem.innerHTML = `
+                    <div class="product-item-image">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="product-item-details">
+                        <div class="product-item-title">${product.title}</div>
+                        <div class="product-item-price">₹${product.price}</div>
+                    </div>
+                    <div class="product-item-actions">
+                        <button class="btn-edit" onclick="editProduct(${product.id})">Edit</button>
+                        <button class="btn-delete" onclick="deleteProduct(${product.id})">Delete</button>
+                    </div>
+                `;
+                
+                adminProductList.appendChild(productItem);
+            });
+        }
+
+        // Add or update product
+        document.getElementById('productForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const title = document.getElementById('title').value;
+            const description = document.getElementById('description').value;
+            const price = document.getElementById('price').value;
+            const available = document.getElementById('availability').checked;
+            
+            if (editingProductId) {
+                // Update existing product
+                const index = products.findIndex(p => p.id === editingProductId);
+                products[index] = {
+                    ...products[index],
+                    title,
+                    description,
+                    price,
+                    available
+                };
+                
+                document.getElementById('submitBtn').textContent = 'Add Product';
+                editingProductId = null;
+            } else {
+                // Add new product
+                const newProduct = {
+                    id: products.length > 0 ? Math.max(...products.map(p => p.id)) + 1 : 1,
+                    title,
+                    description,
+                    price,
+                    available,
+                    image: 'default.jpg'
+                };
+                
+                products.push(newProduct);
+            }
+            
+            this.reset();
+            loadAdminProducts();
+        });
+
+        // Edit product
+        function editProduct(id) {
+            const product = products.find(p => p.id === id);
+            if (product) {
+                document.getElementById('title').value = product.title;
+                document.getElementById('description').value = product.description;
+                document.getElementById('price').value = product.price;
+                document.getElementById('availability').checked = product.available;
+                
+                document.getElementById('submitBtn').textContent = 'Update Product';
+                editingProductId = id;
+            }
+        }
+
+        // Delete product
+        function deleteProduct(id) {
+            if (confirm('Are you sure you want to delete this product?')) {
+                products = products.filter(p => p.id !== id);
+                loadAdminProducts();
+            }
+        }
     </script>
 </body>
 </html>
